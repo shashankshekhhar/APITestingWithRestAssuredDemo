@@ -23,7 +23,7 @@ public class JiraTestCases {
 
 		SessionFilter session = new SessionFilter();
 		given().header("Content-Type", "application/json")
-				.body("{ \"username\": \"username\", \"password\": \"password\" }")
+				.body("{ \"username\": \"username1\", \"password\": \"password1\" }")
 
 				.filter(session).when().post("/rest/auth/1/session").then().assertThat().statusCode(200).log().all()
 				.extract().response();
