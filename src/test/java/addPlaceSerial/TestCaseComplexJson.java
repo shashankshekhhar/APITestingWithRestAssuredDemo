@@ -28,7 +28,10 @@ public class TestCaseComplexJson {
 	
 		GetCourses gc=given().queryParam("access_token", accesToken).header("Content-Type","application/json").expect().defaultParser(Parser.JSON).when().get("https://rahulshettyacademy.com/getCourse.php").as(GetCourses.class);
 	
-	System.out.println(gc.getInstructor());
+	System.out.println(gc.getCourses().getApi().get(0).getCourseTitle());
+	
+	
+	
 	}
 	
 }
