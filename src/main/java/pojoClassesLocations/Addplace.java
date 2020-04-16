@@ -1,4 +1,4 @@
-package BDD.APITestProjectDemo;
+package pojoClassesLocations;
 
 import java.util.List;
 

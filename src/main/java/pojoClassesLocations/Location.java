@@ -1,4 +1,4 @@
-package BDD.APITestProjectDemo;
+package pojoClassesLocations;
 
 public class Location {
 

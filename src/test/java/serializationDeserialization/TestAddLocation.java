@@ -2,9 +2,13 @@ package serializationDeserialization;
 
 import org.junit.Test;
 
-import BDD.APITestProjectDemo.Addplace;
-import BDD.APITestProjectDemo.Location;
+import basePackage.BaseClass;
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import junit.framework.Assert;
+import pojoClassesLocations.Addplace;
+import pojoClassesLocations.Location;
+
 import static io.restassured.RestAssured.*;
 
 import java.util.ArrayList;
@@ -32,8 +36,8 @@ public class TestAddLocation {
 		addplace.setPhone_number("102010202");
 		addplace.setTypes(abc);
 
-		given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json").body(addplace)
-				.when().post("/maps/api/place/add/json").then().log().all().assertThat().statusCode(200);
+		Response res=given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json").body(addplace)
+				.when().post("/maps/api/place/add/json").then().log().all().assertThat().statusCode(200).extract().response();
 
 		
 	}
